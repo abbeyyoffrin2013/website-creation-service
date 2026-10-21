@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Need a Website? | Ruben's Web Design</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #030817;
+  --panel: #0c1b32;
+  --blue: #00d9ff;
+  --purple: #8655ff;
+  --green: #4dffcb;
+  --white: #f4f8ff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Poppins, Arial, sans-serif;
+}
+a { color: inherit; }
+.hero {
+  min-height: 88vh;
+  padding: 75px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at top, #124579, transparent 70%),
+    var(--bg);
+}
+.tag {
+  color: var(--green);
+  letter-spacing: 4px;
+  font-size: 13px;
+  font-weight: 700;
+}
+h1 {
+  font-family: Orbitron, sans-serif;
+  font-size: clamp(32px, 7vw, 68px);
+  line-height: 1.25;
+  margin: 25px 0;
+}
+.glow {
+  color: var(--blue);
+  text-shadow: 0 0 25px #00d9ff88;
+}
+.hero p {
+  max-width: 700px;
+  color: #c9d9ee;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.btn {
+  display: inline-block;
+  margin: 10px 6px;
+  padding: 15px 24px;
+  border-radius: 35px;
+  background: linear-gradient(100deg, var(--blue), var(--purple));
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 0 24px #00d9ff35;
+  transition: transform .2s;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--blue);
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 16px;
+  background: #07152aee;
+  border-bottom: 1px solid #00d9ff44;
+  backdrop-filter: blur(12px);
+}
+nav a {
+  text-decoration: none;
+  color: #eaf8ff;
+  font-size: 14px;
+}
+nav a:hover { color: var(--blue); }
+section {
+  max-width: 1080px;
+  margin: 45px auto;
+  padding: 28px;
+}
+h2 {
+  color: var(--blue);
+  text-align: center;
+  font-family: Orbitron, sans-serif;
+  font-size: clamp(23px, 4vw, 34px);
+  line-height: 1.5;
+}
+.intro {
+  max-width: 760px;
+  margin: 15px auto;
+  text-align: center;
+  color: #bfd0e6;
+  line-height: 1.8;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.card {
+  padding: 25px;
+  border: 1px solid #00d9ff44;
+  background: linear-gradient(145deg, #10213b, #091326);
+  border-radius: 18px;
+  transition: .25s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue);
+  box-shadow: 0 0 22px #00d9ff22;
+}
+.icon { font-size: 38px; }
+.card h3 { color: var(--green); }
+.card p { color: #bfd0e6; line-height: 1.8; }
+.poster-wrap {
+  margin-top: 25px;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid var(--blue);
+  background: #07152a;
+  box-shadow: 0 0 30px #00d9ff22;
+}
+.poster {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.poster-help {
+  color: #ffe45c;
+  text-align: center;
+  line-height: 1.8;
+}
+.steps {
+  max-width: 750px;
+  margin: 25px auto;
+}
+.step {
+  margin: 14px 0;
+  padding: 20px;
+  border-left: 3px solid var(--blue);
+  border-radius: 0 12px 12px 0;
+  background: var(--panel);
+  line-height: 1.8;
+}
+#contact {
+  max-width: none;
+  text-align: center;
+  padding: 65px 20px;
+  background: radial-gradient(ellipse, #10365b, var(--bg) 75%);
+  border-top: 1px solid #00d9ff44;
+  border-bottom: 1px solid #00d9ff44;
+}
+.email {
+  color: var(--green);
+  overflow-wrap: anywhere;
+}
+footer {
+  padding: 30px 15px;
+  text-align: center;
+  color: #8da5c1;
+  font-size: 13px;
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  nav { gap: 13px; }
+  nav a { font-size: 13px; }
+  section { margin: 25px auto; padding: 18px; }
+  .hero { min-height: 75vh; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero" id="home">
+  <div class="tag">CREATIVE WEB DESIGN · RUBEN</div>
+  <h1>
+    NEED A WEBSITE?<br>
+    <span class="glow">LET'S BUILD IT!</span>
+  </h1>
+  <p>
+    Turn your ideas into an amazing website!
+    Explore creative designs for personal pages, portfolios,
+    school projects and more.
+  </p>
+  <div>
+    <a class="btn" href="#contact">✉ MESSAGE ME</a>
+    <a class="btn secondary" href="#example">🖼 SEE EXAMPLE</a>
+  </div>
+  <p style="font-size:13px;letter-spacing:2px">
+    YOUR IDEA · YOUR STYLE · YOUR WEBSITE
+  </p>
+</header>
+
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#services">SERVICES</a>
+  <a href="#example">EXAMPLE</a>
+  <a href="#how">HOW IT WORKS</a>
+  <a href="#contact">CONTACT</a>
+</nav>
+
+<section id="services">
+  <h2>WHAT CAN I CREATE FOR YOU?</h2>
+  <p class="intro">
+    Creative website concepts designed around your idea
+    and the style you want.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h3>Personal Websites</h3>
+      <p>Showcase interests, skills, achievements and ideas.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Creative Portfolios</h3>
+      <p>Present artwork, designs, projects and creations.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🚀</div>
+      <h3>Project Websites</h3>
+      <p>Give school projects, inventions and concepts their own page.</p>
+    </div>
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>Custom Designs</h3>
+      <p>Explore futuristic, colourful, minimal and modern styles.</p>
+    </div>
+  </div>
+</section>
+
+<section id="example">
+  <h2>🌌 WEBSITE DESIGN EXAMPLE</h2>
+  <p class="intro">
+    Here's an example of a futuristic promotional design.
+    Imagine what we could create for your idea!
+  </p>
+
+  <div class="poster-wrap">
+    <img
+      class="poster"
+      src="ruben-poster.png"
+      alt="Futuristic neon advertisement website design example"
+      onerror="this.style.display='none';document.getElementById('posterHelp').hidden=false;">
+    <p id="posterHelp" class="poster-help" hidden>
+      Poster image not found.<br>
+      Save your example picture as <b>ruben-poster.png</b>
+      in the same folder as index.html.
+    </p>
+  </div>
+
+  <p class="intro">
+    Want a design like this? Click below to discuss your idea.
+  </p>
+  <p style="text-align:center">
+    <a class="btn" href="#contact">CREATE MY WEBSITE →</a>
+  </p>
+</section>
+
+<section id="how">
+  <h2>HOW IT WORKS</h2>
+  <p class="intro">Every great website begins with an idea.</p>
+
+  <div class="steps">
+    <div class="step">
+      💬 <b>1. Tell me your idea</b><br>
+      Describe the website you want to create.
+    </div>
+    <div class="step">
+      🎨 <b>2. Discuss your design</b><br>
+      Decide on colours, layout and features.
+    </div>
+    <div class="step">
+      💻 <b>3. Confirm the details</b><br>
+      Agree on what can be created, the delivery
+      arrangements and any cost before proceeding.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>WHY A CUSTOM WEBSITE?</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>Responsive Design</h3>
+      <p>Layouts designed to adapt to phones, tablets and computers.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💡</div>
+      <h3>Your Ideas Matter</h3>
+      <p>Choose the visual style and features that suit your project.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>Direct Contact</h3>
+      <p>Discuss your requirements before deciding to proceed.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="tag">LET'S CREATE SOMETHING AMAZING</div>
+  <h2>READY TO START YOUR WEBSITE?</h2>
+  <p class="intro">
+    Have an idea? Send a message with the website
+    you want and the features you need.
+  </p>
+
+  <a class="btn"
+     href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=abbeyyoffrin2013@gmail.com&amp;su=Website%20Creation%20Enquiry&amp;body=Hi%20Ruben%2C%0A%0AI%20am%20interested%20in%20discussing%20a%20website.%0A%0AMy%20website%20idea%3A%0A%0AFeatures%20I%20need%3A%0A"
+     target="_blank"
+     rel="noopener noreferrer">
+    ✉ OPEN GMAIL & MESSAGE ME
+  </a>
+
+  <p class="email">abbeyyoffrin2013@gmail.com</p>
+  <p class="intro" style="font-size:13px">
+    Gmail opens in a new tab with a draft message ready for you.
+  </p>
+</section>
+
+<footer>
+  <p>CREATIVE WEBSITE IDEAS START HERE</p>
+  <p>Designed by Ruben</p>
+  <p>© <span id="year"></span> Ruben · All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
